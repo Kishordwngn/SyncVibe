@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #09090F;
+    --surface-glass: rgba(24, 24, 34, 0.65);
+    --surface-drawer: rgba(18, 18, 26, 0.94);
+    --accent-primary: #FF2E63;
+    --accent-secondary: #8B5CF6;
+    --accent-synced: #10B981;
+    --text-primary: #FAFAFC;
+    --text-secondary: #A1A1AA;
+    --border-glass: rgba(255, 255, 255, 0.08);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: #09090F;
+    color: #FAFAFC;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  input,
+  textarea {
+    user-select: text;
+  }
+}
+
+.font-mono-tabular {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Vinyl Record Realistic Grooves & Sheen */
+.vinyl-disc-surface {
+  background:
+    conic-gradient(
+      from 35deg at 50% 50%,
+      rgba(255, 255, 255, 0) 0deg,
+      rgba(255, 255, 255, 0.07) 25deg,
+      rgba(255, 255, 255, 0) 55deg,
+      rgba(255, 255, 255, 0) 180deg,
+      rgba(255, 46, 99, 0.06) 205deg,
+      rgba(255, 255, 255, 0) 235deg,
+      rgba(255, 255, 255, 0) 360deg
+    ),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      #101018 0px,
+      #101018 2px,
+      #1a1a26 3px,
+      #0c0c12 4px
+    );
+  box-shadow:
+    0 24px 60px -12px rgba(0, 0, 0, 0.85),
+    0 0 40px -8px rgba(255, 46, 99, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes vinylSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-spinning {
+  animation: vinylSpin 8.5s linear infinite;
+  animation-play-state: running;
+}
+
+.vinyl-paused {
+  animation: vinylSpin 8.5s linear infinite;
+  animation-play-state: paused;
+}
+
+/* Custom Range Scrubber */
+input[type='range'].syncvibe-scrubber {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range'].syncvibe-scrubber::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+}
+
+input[type='range'].syncvibe-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  background: #FF2E63;
+  border: 2px solid #FAFAFC;
+  box-shadow: 0 0 12px rgba(255, 46, 99, 0.85);
+  margin-top: -5px;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type='range'].syncvibe-scrubber:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+}
+
+/* Hide scrollbars inside drawers while keeping smooth touch scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

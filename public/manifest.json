@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "SyncVibe — Couple Music Hangout",
+  "short_name": "SyncVibe",
+  "description": "Listen together, feel closer. Real-time synchronized music player & couple hangout.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#09090F",
+  "theme_color": "#09090F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SyncVibe — Couple Music Hangout",
+  "description": "Real-time synchronized music listening, spinning vinyl turntable, shared Indian romantic & lofi song queue, floating reactions, and live chat for couples.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
